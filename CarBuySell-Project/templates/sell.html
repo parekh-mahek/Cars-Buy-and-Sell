@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+         body {
+          color: DarkBlue;
+          text-align: center;
+          } 
+     
+        </style>
+    </head>
+    <body>
+        <h1>Predicted Price: {{ans}}</h1><br><br>
+        <form action="predict/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <h2>Enter car details</h2>
+            <label for="Age">Company and Model</label><br>
+            <input type="text" name="compmodel" class="text-field"><br>
+            <br>
+            <label for="Age">Car's age</label><br>
+            <input type="text" name="Age" class="text-field" required><br>
+            <br>
+            <label for="Present_Price">What is the Showroom Price?(In lakhs)</label><br>
+            <input type="text" name="Present_Price" class="text-field" required><br>
+            <br>
+            <label for="Kms_Driven">How many kilometers driven?</label><br>
+            <input type="text" name="Kms_Driven" class="text-field" required><br>
+            <br>
+            <label for="Owner">How much owners previously had the car(0 or 1 or 3) ?</label><br>
+            <input type="text" name="Owner" class="text-field" required><br>
+            <br>
+            <label for="Fuel_Type">What is the fuel type?</label><br>
+            <select name="Fuel_Type" class="dropdown" required>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+            </select><br><br>
+            <label for="Seller_Type">Are you a Dealer or Individual</label><br>
+            <select name="Seller_Type" class="dropdown" required>
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select><br><br>
+            <label for="Transmission">Transmission type</label><br>
+            <select name="Transmission" id="research" class="dropdown" required>
+                <option value="Manual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select><br><br>
+            <label for="own_exp_price">Expected Price</label><br>
+            <input type="text" name="own_exp_price" class="text-field" required><br><br>
+            <input type="file" name="image" id="image" accept=".jpeg"><br><br>
+
+            <button type="submit" class="button-class">Submit</button>
+
+        </form>
+    </body>
+</html>

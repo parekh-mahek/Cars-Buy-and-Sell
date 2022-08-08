@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <style>
+     body {
+      color: pink;
+      text-align: center;
+      } 
+ 
+    </style>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+
+    <div>
+      {{email}} <br><br><br>
+      <a href="{% url 'logout' %}">Logout</a><br><br>
+      <a href="{% url 'sell' email %}">Sell</a><br><br>
+      <a href="{% url 'buy' email %}">Buy</a>
+    </div>
+  </body>
+</html>

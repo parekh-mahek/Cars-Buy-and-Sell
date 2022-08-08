@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <style>
+         body {
+          color: DarkBlue;
+          text-align: center;
+          } 
+     
+        </style>
+    </head>
+    <body>
+        <h1>Log In</h1>
+        <form action="loginuser/" method="post">
+            {% csrf_token %}
+            {{message}}
+            <br><br>
+            Email: <input type="text" required name="Email"><br><br>
+            Password: <input type="text" required name="Password"><br><br>
+
+            <input type="submit" name="" value="submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <style>
+         body {
+          color: DarkBlue;
+          text-align: center;
+          } 
+     
+        </style>
+      </head>
+    <body>
+
+    <section >
+        <div >
+            <div >
+                <div>
+                    <div >
+                        <div >
+                            <h1 align="center">Cars for Sale</h1>
+                        </div>
+                        <div >
+                            <table >
+                                <thead>
+                                    <tr>
+                                        <th>Company and Model</th>
+                                        <th>1st Hand Car Price</th>
+                                        <th>Kms Driven</th>
+                                        <th>Owner</th>
+                                        <th>Age of Car</th>
+                                        <th>Fuel Type</th>
+                                        <th>Seller Type</th>
+                                        <th>Transmission</th>
+                                        <th>Predicted Price</th>
+                                        <th>Owner's Expected Price</th>
+                                        <th>Image</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for p in products %}
+                                        <tr>
+                                            <td>{{ p.compmodel }} </td>
+                                            <td>{{ p.Present_Price }} </td>
+                                            <td>{{ p.Kms_Driven }} </td>
+                                            <td>{{ p.Owner }} </td>
+                                            <td>{{ p.Age }} </td>
+                                            <td>{{ p.Fuel_Type }} </td>
+                                            <td>{{ p.Seller_Type }} </td>
+                                            <td>{{ p.Transmission }} </td>
+                                            <td>{{ p.Pred_Price }} </td>
+                                            <td>{{ p.own_exp_price }} </td>
+                                            {% if p.image %}
+                                                <td>
+                                                    <img src="{{ p.image.url }}" alt="" class="prod-size">
+                                                </td>
+                                            {% else %}
+                                                <td>
+                                                    {% comment %} <img src="{% static 'images/product.png' %}" alt="" class="prod-size"> {% endcomment %}
+                                                </td>
+                                            {% endif %}
+                                            <td>
+                                                <a href="mailto:{{p.email}}" class="btn btn-success badge">Buy Now</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
